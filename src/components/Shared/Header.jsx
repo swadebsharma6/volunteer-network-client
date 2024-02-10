@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logos/Group 1329.png';
 import { menus } from "../../utils/navigateMenu";
-
 
 const Header = () => {
     return (
+        <section>
         <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -13,7 +15,9 @@ const Header = () => {
              {menus}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link className="">
+          <img src={logo} alt="Logo"  className='w-28'/>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold">
@@ -21,9 +25,15 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="btn btn-ghost btn-circle avatar mr-3">
+        <div className="w-8 rounded-full">
+          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>
       </div>
+            <button  className='btn btn-primary btn-sm '>Login</button>
+        </div>
+        </div>
+        </section>
     );
 };
 
