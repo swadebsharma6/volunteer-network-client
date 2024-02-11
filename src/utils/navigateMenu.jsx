@@ -5,7 +5,7 @@ export const menus =  <>
   <NavLink
     to="/"
     className={({ isActive}) =>
-       isActive ? "text-primary font-bold" : ""
+       isActive ? "text-orange-500 font-bold" : ""
     }
   >
    Home
@@ -15,7 +15,7 @@ export const menus =  <>
   <NavLink
     to="/donation"
     className={({ isActive}) =>
-       isActive ? "text-primary font-bold" : ""
+       isActive ? "text-orange-500 font-bold" : ""
     }
   >
   Donation
@@ -25,7 +25,7 @@ export const menus =  <>
   <NavLink
     to="/events"
     className={({ isActive}) =>
-       isActive ? "text-primary font-bold" : ""
+       isActive ? "text-orange-500 font-bold" : ""
     }
   >
 Events
