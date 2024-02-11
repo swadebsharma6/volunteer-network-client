@@ -2,9 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import Blogs from "../Pages/Blogs/Blogs";
 import Donation from "../Pages/Donation/Donation";
 import Events from "../Pages/Events/Events";
 import Home from "../Pages/Home/Home/Home";
+import PrivetRoutes from "../components/Provider/PrivetRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -13,15 +15,20 @@ export const router = createBrowserRouter([
       children:[
         {
             path: '/',
-            element: <Home/>
+            element: <Home/>,
+            loader: ()=> fetch('http://localhost:5000/activites')
         },
         {
            path: '/donation',
-           element: <Donation/> 
+           element: <PrivetRoutes><Donation/> </PrivetRoutes>
         },
         {
             path: '/events',
             element:<Events/>
+        },
+        {
+            path: '/blogs',
+            element:<Blogs/>
         },
         {
           path: '/register',

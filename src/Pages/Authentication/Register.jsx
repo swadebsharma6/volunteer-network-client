@@ -8,14 +8,18 @@ const Register = () => {
 
   const {createUser} = useContext(AuthContext);
 
+  // const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  // const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+  
+
   const handleSubmit = event =>{
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photo = form.photo.value;
+    const image = form.image.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password, photo);
+    console.log(name, email, password, image);
     // create user
     createUser(email, password)
     .then(result =>{
@@ -46,7 +50,7 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Photo</span>
                 </label>
-                <input type="file" name="photo" className="file-input file-input-bordered w-full max-w-xs" />
+                <input type="file" name="image" className="file-input file-input-bordered w-full max-w-xs" />
               </div>
               <div className="form-control">
                 <label className="label">

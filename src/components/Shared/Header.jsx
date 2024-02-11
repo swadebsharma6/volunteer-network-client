@@ -40,13 +40,13 @@ const Header = () => {
         <div className="btn btn-ghost btn-circle avatar mr-3">
         <div className="w-8 rounded-full">
         {
-           user.photoURL ?  <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+           user?.photoURL ?  <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
           : <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         }
         </div>
       </div>
-            {user ?  <button onClick={handleLogOut}  className='btn btn-secondary btn-sm '>LogOut</button> :  <Link to='/register'>
-            <button  className='btn btn-primary btn-sm '>Register</button>
+            {user ?  <button onClick={handleLogOut}  className='btn btn-secondary btn-sm '>LogOut</button> :  <Link to='/login'>
+            <button  className='btn btn-primary btn-sm '>Login</button>
             </Link>}
         </div>
         </div>
