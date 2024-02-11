@@ -31,4 +31,14 @@ export const menus =  <>
 Events
   </NavLink>
 </li>
+<li>
+  <NavLink
+    to="/blogs"
+    className={({ isActive}) =>
+       isActive ? "text-orange-500 font-bold" : ""
+    }
+  >
+Blogs
+  </NavLink>
+</li>
 </>

@@ -1,8 +1,20 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logos/Group 1329.png';
 import { menus } from "../../utils/navigateMenu";
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Header = () => {
+  const {user,  logOut} = useContext(AuthContext);
+
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{
+      alert('User logOut Successfully')
+    })
+  }
+
+
     return (
         <section>
         <div className="navbar bg-blue-500 bg-opacity-70 text-white">
@@ -27,10 +39,15 @@ const Header = () => {
         <div className="navbar-end">
         <div className="btn btn-ghost btn-circle avatar mr-3">
         <div className="w-8 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        {
+           user.photoURL ?  <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+          : <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        }
         </div>
       </div>
-            <button  className='btn btn-primary btn-sm '>Login</button>
+            {user ?  <button onClick={handleLogOut}  className='btn btn-secondary btn-sm '>LogOut</button> :  <Link to='/register'>
+            <button  className='btn btn-primary btn-sm '>Register</button>
+            </Link>}
         </div>
         </div>
         </section>
